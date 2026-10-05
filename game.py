@@ -8,7 +8,7 @@ import pygame as pg
 pg.init()
 clock = pg.time.Clock()
 
-screen = pg.display.set_mode((400,600))
+screen = pg.display.set_mode((800,1400))
 pg.display.set_caption("Space Shooter")
 
 # Spaceship character
@@ -29,10 +29,9 @@ for i in range(2):
 
 aliens = []
 for i in range(5):
-    alien1 = {'x': 50*i + 50 , 'y': 0}
-    alien2 = {'x': 50*i + 50, 'y': 50}
-    aliens.append(alien1)
-    aliens.append(alien2)
+    for u in range(15):
+        alien1 = {'x': 50*u + 50 , 'y': 0+i*50}
+        aliens.append(alien1)
 
 alien_w = alien_images[0].get_rect().size[0]
 alien_h = alien_images[0].get_rect().size[1]
